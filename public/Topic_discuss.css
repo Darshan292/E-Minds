@@ -1,0 +1,211 @@
+body{
+    background-color: rgb(207, 231, 255);;
+    margin:0;
+    padding: 0px;
+    width: 100%;
+    height: fit-content;
+    font-family: 'poppins', sans-serif;
+  }
+
+  .container-fluid{
+    text-align: left;
+    width: 100%;
+    height: 70px;
+    color:rgb(0, 0, 0);
+    background-size: cover;
+    background-position: center;
+    margin-top: 0px;
+    position: relative;
+    margin-left: 0px;
+    font-size: 30px;
+}
+.container-fluid h{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.Text_Body{
+    background-color: antiquewhite;
+    border-color: #000000;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 5px;
+    width:80%;
+    height: fit-content;
+    margin-left: 95px;
+    padding: 5px;
+}
+.USN{
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-bottom: 2px;
+}
+.issue{
+    background-color: rgba(162, 162, 162, 0.775);
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 7px;
+    padding: 10px;
+    width: 90%;
+    height: fit-content;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+.openButton {
+    background-color: rgb(128, 140, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    text-align: center;
+    border-color: rgb(128, 140, 255);
+    text-decoration: none;
+    font-size: 18px;
+    margin-top:5px;
+    margin-left: 65px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: fit-content;
+    height: 40px;
+    display: inline-block;
+  }
+.openButton:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+  .loginPopup {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  .formPopup {
+    display: none;
+    position: relative;
+    margin-left: 500px;
+    margin-top: -50px;
+    transform: translate(-50%, 5%);
+    border-radius: 10px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    z-index: 9;
+    width: 600px;
+    height: 148px;
+    background-color: white;
+
+  }
+  .popupformContainer {
+    padding: 0px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
+    font-size: 15px;
+    margin-top: auto;
+    text-align: left;
+    width: fit-content;
+  }
+  .popupformContainer input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 200px;
+    height: 15px;
+    border-radius: 5px;
+    border: none;
+    background: #eee;
+    font-size: 12px;
+  }
+  .popupformContainer input[type=textarea]:focus{
+    background-color: #ddd;
+    outline: none;
+  }
+  .popupformContainer output[type=text]{
+    width: 100%;
+    padding: 15px;
+    margin-top: 0px;
+    margin-left: 5px;
+    width: 200px;
+    height: 15px;
+    border-radius: 5px;
+    border: none;
+    background: #ddd;
+    font-size: 12px;
+  }
+  .popupformContainer .btn {
+    /* padding: 12px 20px; */
+    border: none;
+    background-color: #000000;
+    border-radius: 1px;
+    color: #fff;
+    cursor: pointer;
+    width: 60px;
+    margin-top: 5px;
+    margin-left:50px;
+    opacity: 0.8;
+    font-size: 12px;
+    
+  }
+  .formPopup .cancel {
+    border: none;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    width: 20px;
+    margin-top: 5px;
+    opacity: 0.8;
+    font-size: 12px;
+    margin-left: 550px;
+    background-color: #fff;
+  }
+  .popupformContainer .btn:hover{
+    background-color: white;
+    color: #000000;
+  }
+  .openButton:hover {
+    opacity: 10;
+  }
+  .ComBody{
+    margin-left: 35px;
+    margin-top: 10px;
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+
+  }
+  .Imail{
+    margin-top: -8px;
+    font-size: 15px;
+  }
+  .Date{
+    margin-left: 90%;
+    margin-top: -30px;
+    font-weight: light;
+    font-size: 12px;
+
+  }
+  .TDate{
+    margin-left: 88%;
+    margin-top: -30px;
+    font-weight: light;
+    font-size: 12px;
+
+  }
+  .delete{
+    display: flex;
+    font-size: 12px;
+    font-weight: 600;
+    width: 35px;
+    height: fit-content;
+    text-decoration: none;
+    color: red;
+    text-align: center;
+    margin-left: 1280px;
+    margin-top: 3px;
+    background-color: #000000;
+    padding: 2px;
+    border-radius: 3px;
+  }
+  .delete:hover{
+    background-color: white;
+    color: #000000;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+
+
+  }

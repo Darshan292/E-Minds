@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up | By Code Info</title>
+    <link rel="stylesheet" href="/Signupstyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup">
+      <a href="/index" class="back">&larr;</a>
+      {{#if message}}
+    <h3  class="alert alert-danger mt-3">{{message}}</h3>
+
+    {{/if}}
+    <div class="signup-box_1">
+      <h1 style="color: black;">Sign Up</h1>
+      <h4 style="color: black;">And join the fam..!</h4>
+      <form action="/auth/Signup" method="POST">
+        <label style="color: black;">USN:</label>
+        <input type="text" name="USN"/>
+        <label style="color: black;">Name:</label>
+        <input type="text" name="NAME"/>
+        <label style="color: black;">Branch:</label>
+        <input type="text" name="BRANCH"/>
+        <label style="color: black;">Section:</label>
+        <input type="text" name="SECTION"/>
+        <label style="color: black;">Email:</label>
+        <input type="email" name="EMAIL"/>
+        <label style="color: black;">Create Password:</label>
+        <input type="password" name="PASSWORDS"/>
+        <label style="color: black;">Confirm Password:</label>
+        <input type="password" name="PASSWORDSCONFIRM"/>
+        <input type="submit" value="Submit"/>
+      </form>
+      <br>
+      <p class="para-2">
+        Already have an account? <a href="/login">Login here</a>
+      </p>
+    </div>
+    {{#if message}}
+    <h4 class="alert alert-danger mt-4">{{message}}</h4>
+
+    {{/if}}
+    </div>
+  </body>
+</html>

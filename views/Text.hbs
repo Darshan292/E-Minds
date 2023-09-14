@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topics</title>
+    <link rel="stylesheet" href="/Text.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 id="topicTitle">Topics</h1>
+        {{#if Title}}
+            <h1>{{Title}}</h1>
+          {{/if}}
+    </div>
+<div>
+    {{#each ID}}
+    <form action="/auth/body?id={{this.TOPIC_ID}}" method="post" id="Form">
+    {{!-- <h2>Enter your USN: {{this.TOPIC_ID}}</h2>
+    <input type="text" name="USN" required /> --}}
+    <textarea name="TEXT_BODY" id="" cols="190" rows="20" class="Body",required></textarea>
+    <input type="submit" value="Submit" class="submitbutton"/>
+    </form>
+    {{/each}}
+</div>
+</body>
+<script>
+    const params = new URLSearchParams(window.location.search);
+  const title1 = params.get('title1');
+  document.getElementById('topicTitle').innerHTML = title1;
+</script>
+</html>   

@@ -1,0 +1,108 @@
+ body{
+    background-color: white;
+    background-image: url(./Photos/Discussion1.png);
+    background-size: cover;
+    margin:0;
+    padding: 0px;
+    width: 100%;
+    height: fit-content;
+    font-family: 'poppins', sans-serif;
+  }
+  .text-box{
+      width: 360px;
+      background-color: rgba(255, 255, 255, 0.166);
+      border-color: black;
+      border-style: solid;
+      border-width:1px ;
+      height: fit-content;
+      margin-left: 1070px;
+      margin-top: 30px;
+      border-radius: 30px;
+      position: relative;
+      padding: 10px;
+  }
+  .text-box label{
+    margin-left: 15px ;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    margin-top: 10p;
+    line-height: 20px;
+}
+
+  .container-fluid{
+    text-align: left;
+    width: 100%;
+    height: 70px;
+    color:rgb(0, 0, 0);
+    background-size: cover;
+    background-position: center;
+    margin-top: 0px;
+    position: relative;
+    margin-left: 0px;
+    font-size: 30px;
+}
+.container-fluid h{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.button{
+    background-color: #405cff;
+    width:60px;
+    height: 25px;
+    border-radius: 5px;
+    border-color: #405cff;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #ffcb62;
+    border-color: #fdcd3b;
+}
+.input{
+    width: 250px;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+.text_body{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.body{
+    margin-left: 370px;
+    border-radius: 5px;
+    writing-mode: sideways-lr;
+}
+.heading{
+    font-size: 45px;
+    font-weight: bold;
+    margin-left: 420px;
+    font-size: 65px;
+    color: black;
+    margin-top: 0px;
+
+
+}
+.topic_form{
+    margin:0px;
+}
+.Topic_Lists{
+    color: black;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
+}
+.Topic_Lists:hover{
+    font-weight: bold;
+}
+.List_Box{
+    width:300px;
+    padding: 10px;
+    margin-left: 1100px;
+    margin-top: 40px;
+    border-radius: 30px;
+    height: fit-content;
+    position: fixed;
+}

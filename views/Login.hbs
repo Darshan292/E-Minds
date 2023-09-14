@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login | By Code Info</title>
+    <link rel="stylesheet" href="/Signupstyle.css" />
+   <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login">
+      <a href="/index" class="back">&larr;</a>
+      {{#if message}}
+    <h3  class="alert alert-danger mt-3" style="margin-left:660px; margin-top:100px; margin-bottom:-50px">{{message}}</h3>
+
+    {{/if}}
+    <div class="login-box">
+      <h1 style="color: black;">Login</h1>
+      <form action="/auth/Home" method="post">
+        <label style="color: black;">Email:</label>
+        <input type="email" name="EMAIL" required/>
+        <label style="color: black;">Password:</label>
+        <input type="password" name="PASSWORDS" required />
+        <input type="submit" value="Submit" />
+      </form>
+      <br>
+      <p class="para-2">
+        Not have an account? <a href="/signup">Sign Up Here</a>
+      </p>
+    </div>
+    </div>
+  </body>
+</html>

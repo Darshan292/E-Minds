@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topics</title>
+    <link rel="stylesheet" href="/Topic_discuss.css">
+</head>
+<body>
+<div class="container-fluid">
+          {{#if Title}}
+            <h1 style="text-decoration: dashed;">{{Title}}</h1> 
+          {{/if}}
+          
+</div>
+{{#each ISSUE}}
+    <div class="issue">
+      <div>
+        <h3 class="Imail">&#x2022;{{this.EMAIL}}</h3>
+        <h4 class="Date">{{this.DATE}}</h4>
+        </div>
+        <div style="position: relative; margin-top:-10px;font-size:23px">{{this.ISSUE}}
+        </div>
+    </div>
+    <button class="openButton" onclick="openForm()">Comment</button>
+    <div class="loginPopup">
+    <div class="formPopup" id="popupForm">
+      <button type="button" class="btn cancel" onclick="closeForm()">x</button>
+                    <form action="/auth/Comments?t_id={{this.TOPIC_ID}}" class="popupformContainer" method="post">
+                    <textarea name="TEXT_BODY" id="area" cols="70" rows="5" class="ComBody" required></textarea>
+                    <br>
+                    <button type="submit" value="submit"  class="btn">Submit</button>
+                     </form>
+    </div>
+    </div>
+    <div>
+        {{!-- <form action="/auth/comments" class="commentbutton" method="post" style="display: none;">
+        <input type="button" value="Comment" id="btn"/>
+        <textarea name="TEXT_BODY" id="area" cols="50" rows="5" class="Body" style="display: block;"></textarea>
+         --}}
+        </form>
+    </div>
+{{/each}}
+{{#each ID}}
+<h3 class="USN">&#x2022;{{this.EMAIL}}</h3>
+    <div class="Text_Body">
+        <div>
+        <h4 id="Dates"></h4>
+        </div>
+        <div style="position: relative">{{this.TEXT_BODY}}
+                  <h4 class="TDate" id="DATE">{{this.BODY_DATE}}</h4>
+
+        </div>
+    </div>
+                <a href="/auth/delete?body={{this.TEXT_BODY}}&t_id={{TOPIC_ID}}" class="delete" type="button">delete</a>
+
+{{/each}}
+
+  
+</body>
+<script>
+  function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+      }
+      
+
+
+</script>
+</html>   

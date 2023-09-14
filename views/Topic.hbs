@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topics</title>
+    <link rel="stylesheet" href="/Topic.css">
+</head>
+<body>
+<div class="container-fluid">
+          <h1 id="topicTitle" style="margin-left: 30px; text-decoration: underline;font-style:italic"></h1>
+          {{#if Titles}}
+            <h1 id="topic_title" style="margin-left: 30px;text-decoration: underline;font-style:italic" value={{Titles}}>{{Titles}}</h1>
+          {{/if}}
+</div>
+<div>
+<div class="text-box">
+  <label>Enter Topic Name:</label>
+  <form class="topic_form" >
+    <input type="text" name="TOPIC_NAME" class="input" id="input"/>
+    <input type="button" value="Submit" class="button" id="submit" />
+  </form>
+
+
+  {{#if alert_message}}
+    <h3 class="alert alert-danger mt-4">{{alert_message}} </h3>
+  {{/if}}
+</div>
+  <div class="List_Box">
+  {{#if message}}
+  <h3>{{message}}</h3>
+  {{/if}}
+  {{#each contents}}
+     <a  href="/auth/topics?name={{this.FIELD_NAME}}&tname={{this.TOPIC_NAME}}" class="Topic_Lists" id="choose">&#x2022; {{this.TOPIC_NAME}}<br></a>
+  {{/each}}
+</div>
+</body>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const title = params.get('name');
+  document.getElementById('topicTitle').innerHTML = title;
+  const submitButton = document.getElementById('submit');
+  submitButton.addEventListener('click', function(){
+    if(!title){
+     const titless=document.getElementById('topic_title').innerHTML;
+      const inputValue = document.getElementById('input').value;
+    const currUrl = window.location.href;
+    const newUrl = "/auth/text?"+"field="+titless+"&title1="+inputValue;
+    window.location.href = newUrl;
+    }
+   else{const inputValue = document.getElementById('input').value;
+    const currUrl = window.location.href;
+    const newUrl = "/auth/text?"+"field="+title+"&title1="+inputValue;
+
+    window.location.href = newUrl;
+   }
+  })
+
+</script>
+</html>   

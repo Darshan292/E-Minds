@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Page</title>
+<link rel="stylesheet" href="/profile.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+<body>
+  <a href="/auth/HomeNav" class="back">&larr;</a></h1>
+  <div class="card">
+    <div class="container">
+      <h2 style="text-align: center; background-color:black; color:white; margin-top:5px; font-family: Times New Roman; border-radius:5px">User Profile Card</h2>
+      {{!-- <img src="1.jpg" alt="" style="width: 100%"> --}}
+      {{#each User}}
+      <div class="not-main">
+      <h2><span style="font-size: 1.15rem;">Name: </span>{{this.NAME}}</h2>
+      <h2><span style="font-size: 1.15rem;">USN: </span> {{this.USN}}</h2>
+      <h2><span style="font-size: 1.15rem;">BRANCH: </span> {{this.BRANCH}}</h2>
+      <h2><span style="font-size: 1.15rem;">Section: </span>{{this.SECTION}}</h2>
+      <h2><span style="font-size: 1.15rem;">Email: </span>{{this.EMAIL}}</h2>
+        </div>
+      {{/each}}
+    
+      {{!-- <p class="title">CEO & Founder</p>
+      <p>India University</p> --}}
+      {{!-- <p><button>Contact</button></p> --}}
+    </div>
+  </div>
+  
+</body>
