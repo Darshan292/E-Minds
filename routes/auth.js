@@ -3,8 +3,6 @@ const router = express.Router();
 const mysql = require('mysql');
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
-// const session=require('express-session');
-
 
 const db = mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -23,11 +21,7 @@ router.post('/Signup',async(req, res)=>{
           });
     }
     
-    
-
     var value = [USN, NAME, BRANCH, SECTION, EMAIL, hashedPassword]
-
-
     db.query('select EMAIL from users where email= ?',[EMAIL],(error, result)=>{
         if(error){
             console.log(error.message)
@@ -48,12 +42,8 @@ router.post('/Signup',async(req, res)=>{
 }
 
 });
-    
-
 // login page
-
 router.post('/Home',async(req, res)=>{
-    // console.log(req.body)
     const{EMAIL, PASSWORDS} = req.body;
 
     db.query('SELECT PASSWORDS FROM users WHERE EMAIL=?',[EMAIL],(error, result)=>{
@@ -78,14 +68,12 @@ router.post('/Home',async(req, res)=>{
         const token = jwt.sign({email: EMAIL},"HACKER",{
             expiresIn: '1h'
         })
-        // res.cookie('user', token)
         res.cookie("user", token,{
             httpOnly: true
         });
         console.log(req.cookies.user)
         db.query('Select I.`ISSUE`, I.`EMAIL` as `IMAIL`, T.`TEXT_BODY`,T.BODY_DATE, T.EMAIL, Ts.FIELD_NAME, Ts.TOPIC_NAME FROM `issues` I , `texts` T, `topics` Ts WHERE T.TOPIC_ID=I.TOPIC_ID AND TS.TOPIC_ID=T.TOPIC_ID GROUP BY (I.ISSUE) order by (BODY_DATE) DESC',(error,Issue)=>{
-            console.log(Issue);
-            
+            console.log(Issue);  
             if(error){ console.log(error);}
                db.query('SELECT * FROM `fields` ORDER BY FIELD_ID DESC;',(error, result)=>{
                 if(error){
@@ -224,17 +212,6 @@ else{
     db.query('select * from topics where TOPIC_NAME= ? AND FIELD_NAME=? ',[TOPIC_NAME,FIELD_NAME],(error, result)=>{
         // console.log(result);
         if(result.length > 0){
-            // db.query('SELECT * FROM `topics`where `FIELD_NAME`=?',[FIELD_NAME],(error, result)=>{
-            //     if(error){
-            //         console.log(error.message);
-            //     }
-            //     else if(result.length== 0){
-            //         res.render('Topic',{message: "No topic exist"});
-            //      }
-            //      else {
-            //         console.log('if result');
-            //         // console.log(result)
-            //         res.render('Topic',{contents:result ,alert_message:'TOPIC EXISTS'})
             topictextdisplay();
                 }   
             })
@@ -330,11 +307,6 @@ router.post('/body',(req,res)=>{
     console.log(USN);
     console.log(TEXT_BODY);
     console.log(TOPIC_ID);
-    // db.query('INSERT INTO `likes`(`TOPIC_ID`) VALUES (?)',[TOPIC_ID],(error,result)=>{
-    //     if(error){console.log(error);}
-    //     else{console.log('Likes');
-    //     console.log(result);}
-    // })
     db.query('INSERT INTO `issues`(`EMAIL`, `TOPIC_ID`, `ISSUE`) VALUES(?, ?, ?)',[data.email, TOPIC_ID, TEXT_BODY],(error,result)=>{
         db.query('SELECT * FROM `topics` where `TOPIC_ID`=?',[TOPIC_ID],(error,topictable)=>{
             const T_NAME = topictable[0].TOPIC_NAME;
